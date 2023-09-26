@@ -1,0 +1,60 @@
+.Coin {
+  width: 200px;
+  height: 200px;
+  margin: 50px auto;
+  border: 1px solid black;
+  box-shadow: 0 0 10px #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Coin-img {
+  width: 100%;
+}
+
+.Coin-flip {
+  animation-name: Coin-spin;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes Coin-spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.Coin-heads {
+  animation-name: Coin-spin-heads;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes Coin-spin-heads {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.Coin-tails {
+  animation-name: Coin-spin-tails;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes Coin-spin-tails {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
