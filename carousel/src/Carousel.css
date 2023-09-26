@@ -13,3 +13,8 @@
 .Carousel-main > i:hover {
   color: black;
 }
+
+.disabled {
+  opacity: 0.25;
+  pointer-events: none;
+}

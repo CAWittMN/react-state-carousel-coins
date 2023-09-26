@@ -10,14 +10,17 @@ function Carousel(props) {
   const card = props.cardData[cardIdx];
   const total = props.cardData.length;
   const goForward = () => setCardIdx(cardIdx + 1);
+  const goBack = () => setCardIdx(cardIdx - 1);
 
   return (
     <div className="Carousel">
       <h1>{props.title}</h1>
       <div className="Carousel-main">
         <i
-          className="fas fa-chevron-circle-left fa-2x"
-          onClick={goForward}
+          className={`fas fa-chevron-circle-left fa-2x ${
+            cardIdx === 0 ? "disabled" : ""
+          }`}
+          onClick={goBack}
           data-testid="left-arrow"
         />
         <Card
@@ -27,7 +30,9 @@ function Carousel(props) {
           totalNum={total}
         />
         <i
-          className="fas fa-chevron-circle-right fa-2x"
+          className={`fas fa-chevron-circle-right fa-2x ${
+            cardIdx === 2 ? "disabled" : ""
+          }`}
           onClick={goForward}
           data-testid="right-arrow"
         />
@@ -40,18 +45,18 @@ Carousel.defaultProps = {
   cardData: [
     {
       src: image1,
-      caption: "Photo by Richard Pasquarella on Unsplash"
+      caption: "Photo by Richard Pasquarella on Unsplash",
     },
     {
       src: image2,
-      caption: "Photo by Pratik Patel on Unsplash"
+      caption: "Photo by Pratik Patel on Unsplash",
     },
     {
       src: image3,
-      caption: "Photo by Josh Post on Unsplash"
-    }
+      caption: "Photo by Josh Post on Unsplash",
+    },
   ],
-  title: "Shells from far away beaches."
+  title: "Shells from far away beaches.",
 };
 
 export default Carousel;
